@@ -1,0 +1,19 @@
+<%= form_for @tweets do |f| %>
+  <% if @tweet.errors.any? %>
+    <div class="error_messages">
+      <h2 class="error">Form is invaid</h2>
+      <ul>
+        <% @tweet.errors.full_messages.each do |message| %>
+          <li><%= Status %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :status %></br>
+    <%=f.text_area :status, size: "25x10" %>
+  </div>
+
+  <%= f.submit("Submit", :class => "btn btn-default") %>
+  <% end %>

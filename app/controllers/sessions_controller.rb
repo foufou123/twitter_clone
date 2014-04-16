@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to("/users")
+      redirect_to("/tweets")
       flash[:notice] = "User succesfully logged in"
     else
       flash[:notice] = "Invalid log in"
@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to("/users")
+    redirect_to("/tweets")
   end
 end

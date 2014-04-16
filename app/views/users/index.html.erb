@@ -1,11 +1,9 @@
 <h1>Log in or sign up</h1>
 
-
 <%= render 'form' %>
 
-
 <ul>
-  <% @users.each do |user| %>
-    <li><%= user.username %></li>
+  <% @user.tweets.each do |tweet| %>
+    <li><%= tweet.status %></li>
   <% end %>
 </ul>
